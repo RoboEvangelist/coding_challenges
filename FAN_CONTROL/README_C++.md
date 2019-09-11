@@ -3,7 +3,7 @@ Homework
 
 Solutions to Homework problem is on the filed named:
 >
->     fan_control.cpp
+>     fan_control_main.cpp
 >
 
 To compile the C++ solutions, just run:
