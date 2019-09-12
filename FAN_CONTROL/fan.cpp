@@ -3,9 +3,10 @@
 */
 
 #include <climits>
+
 #include "fan/fan.hpp"
 
-void Fan::readTemperature(uint32_t temperature) {
+void Fan::readTemperature(float temperature) {
   temperature_ = temperature;
   /*
   The fan control algorithm should behave as follows:
@@ -20,8 +21,11 @@ If the temperature is 75° C or above, the fans should run at 100% duty cycle.
   } else if (temperature_ >= 75) {
     duty_cycle_ = 100;
   } else if ((temperature_ > 25) && (temperature_ < 75)) {
+    /// here we convert the range (25, 75) into the range
+    /// (20, 100)
     duty_cycle_ =
-      (((temperature_ - 26) * (99 - 21)) / (74 - 26)) + 21;
+      (((temperature_ - 26.0) * (99.0 - 21.0)) / (74.0 - 26.0))
+      + 21.0;
   }
 
   /// We are told that the register value is proportional to

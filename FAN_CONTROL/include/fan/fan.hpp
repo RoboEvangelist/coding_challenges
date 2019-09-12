@@ -31,33 +31,33 @@ class Fan {
      @return las value sent to the register
   */
   uint32_t getRegisterValue() const {return register_value_;}
-  /* @brief function that gets the las duty cycle state of fan
-     @return duty cycle value
-  */
-  uint32_t getDutyCycle() const {return duty_cycle_;}
   /* @brief function returns the last measured temperature of
             the system associated with this fan
      @return last measured temperature
   */
-  uint32_t getTemperature() const {return temperature_;}
+  float getTemperature() const {return temperature_;}
+  /* @brief function that gets the las duty cycle state of fan
+     @return duty cycle value
+  */
+  float getDutyCycle() const {return duty_cycle_;}
   /* @brief has a input the temperature of the system, and then
             uses this temperature value to set the fan's duty
             cycle
      @param temperature current temperature of the system 
      @return void
   */
-  void readTemperature(uint32_t temperature);
+  void readTemperature(float temperature);
 
  private:
   /// fan registed (like the fan's ID)
   uint8_t fan_register_;
-  /// duty cycle in percentage
-  uint8_t duty_cycle_;
-  /// temperature of the system the fan is cooling off
-  uint32_t temperature_;
   /// fan speed is set by sending this number to the register hardware
   /// register connected to the fan
   volatile uint32_t register_value_;
+  /// duty cycle in percentage
+  float duty_cycle_;
+  /// temperature of the system the fan is cooling off
+  float temperature_;
 };
 #endif  // "FAN_HPP"
 
