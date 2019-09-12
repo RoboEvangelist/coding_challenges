@@ -2,6 +2,7 @@
    Copyright 2019 Luis Bill
 */
 
+#include <iostream>
 #include "fan/fan.hpp"
 
 int main()
