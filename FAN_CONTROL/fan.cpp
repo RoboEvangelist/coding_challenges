@@ -21,7 +21,7 @@ If the temperature is 75° C or above, the fans should run at 100% duty cycle.
     duty_cycle_ = 100;
   /// linearly interpolate
   /// we are trying to convert the range (25, 75) into (20, 100)
-  else if ((temperature_ > 25) || (temperature_ < 75)) {
+  else if ((temperature_ > 25) && (temperature_ < 75)) {
     duty_cycle_ = (((temperature_ - 26) * (99 - 21)) / (74 - 26)) + 21;
   }
 
