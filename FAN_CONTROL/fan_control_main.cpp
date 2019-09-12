@@ -29,11 +29,14 @@ int main() {
   /// let's read random temperatures between 0 and 100 celcius
   /// the number of readings is the same as the number of
   /// systems/fans
-  for (uint8_t i = 0; i < num_systems; ++i) {
+  for (int i = 0; i < num_systems; ++i) {
+    int current_sys_temperature = ((rand() % 100) + 1);
+    std::cout << "System " << i << "'s temperature is "
+      << current_sys_temperature << " Celsius\n";
     max_temperature = std::max(max_temperature, 
-    static_cast<uint8_t>((rand() % 36) + 1));
+    static_cast<uint8_t>(current_sys_temperature));
   }
-  std::cout << "Max Temperature reading is: " <<
+  std::cout << "\nMax Temperature reading is: " <<
     static_cast<int>(max_temperature) << "\n";
   /// we use the max temperature to set the same duty cycle on each
   /// fan
