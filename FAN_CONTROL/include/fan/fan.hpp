@@ -53,11 +53,11 @@ class Fan {
   uint8_t fan_register_;
   /// duty cycle in percentage
   uint8_t duty_cycle_;
+  /// temperature of the system the fan is cooling off
+  uint32_t temperature_;
   /// fan speed is set by sending this number to the register hardware
   /// register connected to the fan
   volatile uint32_t register_value_;
-  /// temperature of the system the fan is cooling off
-  uint32_t temperature_;
 };
 #endif  // "FAN_HPP"
 
