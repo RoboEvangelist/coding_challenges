@@ -19,7 +19,7 @@ class Fan {
   uint8_t getFanRegister() const {return fan_register_;}
   uint32_t getRegisterValue() const {return register_value_;}
   uint32_t getDutyCycle() const {return duty_cycle_;}
-  uint32_t getTemperatureCelcius() const {return temperature_;}
+  uint32_t getTemperature() const {return temperature_;}
   void readTemperature(uint32_t temperature);
 
  private:
