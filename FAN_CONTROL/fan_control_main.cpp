@@ -1,5 +1,8 @@
-#include <iostream>
-#include "fan_control/fan_control.hpp"
+/* fan_control_main.cpp
+   Copyright 2019 Luis Bill
+*/
+
+#include "fan/fan.hpp"
 
 int main()
 {

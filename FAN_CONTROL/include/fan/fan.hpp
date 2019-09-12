@@ -1,8 +1,9 @@
-/* fan_control.hpp
+/* fan.hpp
    Copyright 2019 Luis Bill
 */
 
-#include "fan_control/fan_control.hpp"
+#include <cmath>
+#include <iostream>
 
 #ifndef FAN_HPP
 #define FAN_HPP
@@ -22,7 +23,7 @@ class Fan {
   uint32_t getTemperatureCelcius() const {return temperature_;}
   void setDutyCycle(uint32_t duty_cycle) {duty_cycle_ = duty_cycle;}
   void setSpeedToRegister(uint32_t speed) {register_value_ = speed;}
-  void readTemperature(uint32_t temperature) {temperature_ = temperature;}
+  void readTemperature(uint32_t temperature);
 
  private:
   /// fan registed (like the fan's ID)
