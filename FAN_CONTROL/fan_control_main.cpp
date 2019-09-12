@@ -33,11 +33,11 @@ int main() {
     int current_sys_temperature = ((rand() % 100) + 1);
     std::cout << "System " << i << "'s temperature is "
       << current_sys_temperature << " Celsius\n";
-    max_temperature = std::max(max_temperature, 
-    static_cast<uint8_t>(current_sys_temperature));
+    max_temperature = std::max(max_temperature,
+      static_cast<uint8_t>(current_sys_temperature));
   }
   std::cout << "\nMax Temperature reading is: " <<
-    static_cast<int>(max_temperature) << "\n";
+    static_cast<int>(max_temperature) << "\n\n";
   /// we use the max temperature to set the same duty cycle on each
   /// fan
   for (auto& fan : system_vect) {
