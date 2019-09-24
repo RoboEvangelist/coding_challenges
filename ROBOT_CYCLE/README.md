@@ -5,4 +5,4 @@ For instance, "FFLLLL" is a cycle string, because the robot
 comes back to a previously visited location
 
 to run just do:
->      g++ cycle.cpp -o cycle -std=c++17 -pthread && ./cycle
+>      g++ cycle.cpp -o cycle -std=c++17 && ./cycle

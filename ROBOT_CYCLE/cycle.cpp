@@ -1,14 +1,7 @@
-#include <time.h>
 #include <iostream>
-#include <thread>
-#include <mutex>
-#include <csignal>
-#include <chrono>
-#include <vector>
 #include <unordered_set>
 #include <utility>
-
-using namespace std;
+#include <string>
 
 struct pair_hash
 {
@@ -30,19 +23,19 @@ int main() {
   
   int distance_x = 0;
   int distance_y = 0;
-  unordered_set<pair<int, int>, pair_hash> location_set;
+  std::unordered_set<std::pair<int, int>, pair_hash> location_set;
   
   /// initial motion is to the right
-  string motions = "FLLLLR";
-  int string_size = motions.length();
+  std::string motions = "FLLLLR";
+  int string_length = motions.length();
   int motion_state = 0;
-  for (int i = 0; i < string_size; ++i) {
-    cout << distance_x << ", " << distance_y << "\n";
+  for (int i = 0; i < string_length; ++i) {
+    std::cout << distance_x << ", " << distance_y << "\n";
     if (location_set.find({distance_x, distance_y}) != location_set.end()) {
-      cout << "Cycle Found\n";
+      std::cout << "Cycle Found\n";
       break;
     } else {
-      location_set.insert(make_pair(distance_x, distance_y));
+      location_set.insert(std::make_pair(distance_x, distance_y));
     }
     if (motions[i] == 'L') {
       motion_state++;
