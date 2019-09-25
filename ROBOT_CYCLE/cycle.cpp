@@ -15,19 +15,19 @@ struct pair_hash
 	}
 };
 
-// To execute C++, please define "int main()"
 int main() {
-  // U, L, D, R
+  // Up, Left, Down, Right
   int mov_x[] = {0, -1,  0, 1};
   int mov_y[] = {1,  0, -1, 0};
   
+  /// initial position is at 0, 0
   int distance_x = 0;
   int distance_y = 0;
   std::unordered_set<std::pair<int, int>, pair_hash> location_set;
   
-  /// initial motion is to the right
   std::string motions = "FLLLLR";
   int string_length = motions.length();
+  /// initial motion is up
   int motion_state = 0;
   for (int i = 0; i < string_length; ++i) {
     std::cout << distance_x << ", " << distance_y << "\n";
