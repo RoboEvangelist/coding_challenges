@@ -13,8 +13,15 @@
 class Robot
 {
  public:
-  Robot() 
-  {
+  /// world size is in meters
+  Robot(float world_size=100.0) : forward_noise(0.0), turn_noise(0.0),
+  sense_noise(0.0) {
+  x_location_ =
+    (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * world_size;
+  y_location_ =
+    (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * world_size;
+  orientation_ =
+    (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * 2.0 * M_PI;
   }
   
   ~Robot() {}
@@ -26,9 +33,12 @@ class Robot
   int LoadFaceDetectModel(const std::string graph_path);
     
  private:
-  int x_location_;
-  int y_location_;
+  float x_location_;
+  float y_location_;
   float orientation_;
+  float forward_noise_;
+  float turn_noise_;
+  float sense_noise_;
 
 };
 
