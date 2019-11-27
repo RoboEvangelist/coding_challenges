@@ -27,11 +27,18 @@ class Robot
   
   ~Robot() {}
   
-  /// @brief Load trained model for face detection
-  /// @param graph_path path to trained face model save
-  /// @param session used to run the graph and produce the output
-  /// @return whether face is loaded or not
+  /// @brief Set robot's pose
+  /// @param x
+  /// @param y
+  /// @param orient
+  /// @return void
   void set(float x, float y, float orient);
+
+  /// @brief Makes robot move
+  /// @param orient
+  /// @param distance distance in meters
+  /// @return void
+  void move(float orient, float distance);
     
  private:
   float x_location_;
