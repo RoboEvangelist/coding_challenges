@@ -11,6 +11,8 @@ int main(int argc, char** argv) {
   float world_size = 100.0;
   Robot robot(world_size);
   robot.set(10, 10, 0);
+  robot.move(M_PI/2, 10);
+  robot.sense();
 
   return 0;
 }

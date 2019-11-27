@@ -39,6 +39,10 @@ class Robot
   /// @param distance distance in meters
   /// @return void
   void move(float orient, float distance);
+
+  /// @brief Takes measurements
+  /// @return void
+  void sense();
     
  private:
   float x_location_;

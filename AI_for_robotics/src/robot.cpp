@@ -9,3 +9,14 @@ void Robot::set(float x, float y, float orient) {
   std::cout << "orient=" << orientation_ << "\n\n";
 }
 
+void Robot::move(float orient, float distance) {
+  std::cout << "x=" << x_location_ << " ";
+  std::cout << "y=" << y_location_ << " ";
+  std::cout << "orient=" << orientation_ << "\n\n";
+}
+
+void Robot::sense() {
+  std::cout << "x=" << x_location_ << " ";
+  std::cout << "y=" << y_location_ << " ";
+  std::cout << "orient=" << orientation_ << "\n\n";
+}
