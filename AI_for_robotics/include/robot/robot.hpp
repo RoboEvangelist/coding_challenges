@@ -14,8 +14,9 @@ class Robot
 {
  public:
   /// world size is in meters
-  Robot(float world_size=100.0) : forward_noise_(0.0), turn_noise_(0.0),
-  sense_noise_(0.0), world_size_(world_size) {
+  Robot(float world_size, std::vector<std::vector<float>> landmarks) :
+  forward_noise_(0.0), turn_noise_(0.0), sense_noise_(0.0),
+  world_size_(world_size), landmarks_(landmarks) {
   /// the initial random numbers fall in the range [0, 1.0] inclusive
   x_location_ =
     (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * world_size;
@@ -34,6 +35,11 @@ class Robot
   /// @return void
   void set(float new_x, float new_y, float new_orient);
 
+  /// @brief Makes it possible to change the noise parameters.
+  ///        This is often useful in particel filters
+  /// @return void
+  void set_noise(float new_f_noise, float new_t_noise, float new_s_noise);
+
   /// @brief Makes robot move
   /// @param orient
   /// @param distance distance in meters
@@ -41,8 +47,8 @@ class Robot
   void move(float orient, float distance);
 
   /// @brief Takes measurements
-  /// @return void
-  void sense();
+  /// @return returns the measurement vectore
+  std::vector<float> sense();
     
  private:
   float world_size_;
@@ -52,7 +58,7 @@ class Robot
   float forward_noise_;
   float turn_noise_;
   float sense_noise_;
-
+  std::vector<std::vector<float>> landmarks_;
 };
 
 #endif  // ROBOT_HPP

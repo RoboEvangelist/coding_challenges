@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
                                             {80.0, 20.0}};
   /// size in meters
   float world_size = 100.0;
-  Robot robot(world_size);
+  Robot robot(world_size, landmarks);
   robot.set(10, 10, 0);
   robot.move(M_PI/2, 10);
   robot.sense();
