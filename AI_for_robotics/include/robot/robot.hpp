@@ -31,7 +31,7 @@ class Robot
   /// @param graph_path path to trained face model save
   /// @param session used to run the graph and produce the output
   /// @return whether face is loaded or not
-  int LoadFaceDetectModel(const std::string graph_path);
+  void set(float x, float y, float orient);
     
  private:
   float x_location_;

@@ -10,6 +10,7 @@ int main(int argc, char** argv) {
   /// size in meters
   float world_size = 100.0;
   Robot robot(world_size);
+  robot.set(10, 10, 0);
 
   return 0;
 }
