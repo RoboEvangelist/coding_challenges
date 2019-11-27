@@ -16,6 +16,7 @@ class Robot
   /// world size is in meters
   Robot(float world_size=100.0) : forward_noise(0.0), turn_noise(0.0),
   sense_noise(0.0) {
+  /// the initial random numbers fall in the range [0, 1.0] inclusive
   x_location_ =
     (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * world_size;
   y_location_ =
