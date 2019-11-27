@@ -12,7 +12,10 @@ int main(int argc, char** argv) {
   Robot robot(world_size, landmarks);
   robot.set(10, 10, 0);
   robot.move(M_PI/2, 10);
-  robot.sense();
+  std::vector<float> measurements = robot.sense();
+  for (const auto measurement : measurements)
+    std::cout << measurement << ", ";
+  std::cout << "\n";
 
   return 0;
 }

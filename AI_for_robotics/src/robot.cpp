@@ -28,12 +28,17 @@ void Robot::move(float orient, float distance) {
 }
 
 std::vector<float> Robot::sense() {
+  std::default_random_engine generator;
+  std::normal_distribution<float> distribution(0.0, sense_noise_);
   float dist;
   /// Z is the vector of measurements
   std::vector<float> Z;
   int landmarks_size = landmarks_.size();
   for (int i = 0; i < landmarks_size; ++i) {
-    dist = sqrtf((x_location_ - landmarks_[i][0]));
+    dist = sqrtf(pow((x_location_ - landmarks_[i][0]), 2) +
+      (y_location_ - landmarks_[i][1]));
+    dist += distribution(generator);
+    Z.push_back(dist);
   }
   return Z;
 }

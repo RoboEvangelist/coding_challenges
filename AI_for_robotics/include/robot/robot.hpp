@@ -9,7 +9,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
 class Robot
 {
  public:
