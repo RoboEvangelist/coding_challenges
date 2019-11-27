@@ -1,5 +1,5 @@
-#ifndef ROBOT_H
-#define	ROBOT_H
+#ifndef ROBOT_HPP
+#define	ROBOT_HPP
 
 #include <string>
 #include <vector>
@@ -32,5 +32,5 @@ class Robot
 
 };
 
-#endif  // ROBOT_H
+#endif  // ROBOT_HPP
 
