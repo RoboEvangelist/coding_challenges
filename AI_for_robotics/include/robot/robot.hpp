@@ -15,7 +15,7 @@ class Robot
  public:
   /// world size is in meters
   Robot(float world_size=100.0) : forward_noise_(0.0), turn_noise_(0.0),
-  sense_noise_(0.0) {
+  sense_noise_(0.0), world_size_(world_size) {
   /// the initial random numbers fall in the range [0, 1.0] inclusive
   x_location_ =
     (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * world_size;
@@ -32,7 +32,7 @@ class Robot
   /// @param y
   /// @param orient
   /// @return void
-  void set(float x, float y, float orient);
+  void set(float new_x, float new_y, float new_orient);
 
   /// @brief Makes robot move
   /// @param orient
@@ -45,6 +45,7 @@ class Robot
   void sense();
     
  private:
+  float world_size_;
   float x_location_;
   float y_location_;
   float orientation_;
