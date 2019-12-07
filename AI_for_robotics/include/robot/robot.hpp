@@ -9,8 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 
-class Robot
-{
+class Robot {
  public:
   /// world size is in meters
   Robot(float world_size, std::vector<std::vector<float>> landmarks) :
@@ -49,11 +48,6 @@ class Robot
   /// @return returns the measurement vectore
   std::vector<float> sense();
 
-  /// @brief update method for the kalman filter
-  /// @return returns new mean and variances
-  std::vector<float> kalman_update(float mean1, float var1,
-    float mean2, float var2);
-    
  private:
   float world_size_;
   float x_location_;
