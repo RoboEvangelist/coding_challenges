@@ -43,11 +43,16 @@ class Robot
   /// @param orient
   /// @param distance distance in meters
   /// @return void
-  void move(float orient, float distance);
+  void move(float orient, float forward);
 
   /// @brief Takes measurements
   /// @return returns the measurement vectore
   std::vector<float> sense();
+
+  /// @brief update method for the kalman filter
+  /// @return returns new mean and variances
+  std::vector<float> kalman_update(float mean1, float var1,
+    float mean2, float var2);
     
  private:
   float world_size_;

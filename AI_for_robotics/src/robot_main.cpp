@@ -17,6 +17,12 @@ int main(int argc, char** argv) {
     std::cout << measurement << ", ";
   std::cout << "\n";
 
+  std::vector<float> kalman_update =
+    robot.kalman_update(10, 8, 13, 2);
+  for (const auto update : kalman_update)
+    std::cout << update << ", ";
+  std::cout << "\n";
+
   return 0;
 }
 
